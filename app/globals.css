@@ -170,6 +170,12 @@ h2 {
 .step h3 { margin: 0 0 8px; font-size: 17px; }
 .step p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
 
+.news-outlet {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--pine); margin-bottom: 10px; display: block;
+}
+.news-outlet + p { margin-bottom: 12px; }
+
 /* ---------- detail page ---------- */
 .detail-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: start; }
 @media (max-width: 860px) { .detail-grid { grid-template-columns: 1fr; } }

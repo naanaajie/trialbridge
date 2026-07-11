@@ -5,6 +5,28 @@ import { fetchTrials } from "@/lib/trials";
 
 export const revalidate = 43200;
 
+// TODO: 拿到真实患者的书面授权后，可替换/补充为自有证言。
+const newsCoverage = [
+  {
+    outlet: "BBC World Service",
+    summary:
+      "An Australian myeloma patient's cancer became undetectable weeks after CAR-T treatment in Shanghai; she is now in remission back home.",
+    href: "https://www.youtube.com/watch?v=wZGqpzYVkXs",
+  },
+  {
+    outlet: "Business Standard",
+    summary:
+      "A New Zealand man told to consider palliative care travelled to China for a CAR-T trial; the total cost, flights included, was around a tenth of prices elsewhere.",
+    href: "https://www.business-standard.com/amp/world-news/china-lures-foreign-patients-with-cutting-edge-low-cost-medical-care-126061100121_1.html",
+  },
+  {
+    outlet: "Inside Precision Medicine",
+    summary:
+      "In 2025 China approved the world's first CAR-T therapy for a solid tumour, a milestone the field had chased for years.",
+    href: "https://www.insideprecisionmedicine.com/topics/oncology/solid-tumor-car-t-therapy-approved-in-china-a-world-first/",
+  },
+];
+
 export default async function Home() {
   const [cart, proton] = await Promise.all([
     fetchTrials({ therapy: "car-t", pageSize: 6 }),
@@ -20,15 +42,16 @@ export default async function Home() {
           <div>
             <p className="eyebrow">For patients in the US & Europe</p>
             <h1>
-              China's <em>CAR-T</em> and <em>proton therapy</em> trials, made findable.
+              When treatment runs out at home, <em>it may not be over</em>.
             </h1>
             <p className="lede">
-              Hundreds of cell-therapy and proton programs recruit in China right now — many free to join, several
-              years ahead of what's approved at home. We help you see what fits and connect you to the right center.
+              A growing number of patients from the US and Europe are reaching remission through CAR-T trials in
+              China — often for a fraction of what it costs at home, and years before these therapies are approved
+              where they live. We help you find out whether a trial could fit you.
             </p>
             <div className="btn-row">
               <Link href="#contact" className="btn">
-                Check my eligibility — free
+                See if a trial could fit — free
               </Link>
               <Link href="/car-t-cell-therapy-china" className="btn secondary">
                 Browse CAR-T trials
@@ -48,6 +71,28 @@ export default async function Home() {
               <span className="lbl">Proton therapy trials recruiting</span>
             </div>
             <div className="foot">Counts refresh from the public registry every 12 hours.</div>
+          </div>
+        </div>
+      </section>
+
+      {/* IN THE NEWS */}
+      <section className="section">
+        <div className="container">
+          <h2>You may have seen the coverage</h2>
+          <p className="section-intro">
+            Independent reporting on why patients are travelling to China — and what they're finding. These are
+            journalists' accounts, linked in full, not testimonials from us.
+          </p>
+          <div className="cards">
+            {newsCoverage.map((item) => (
+              <div className="step" key={item.outlet}>
+                <span className="news-outlet">{item.outlet}</span>
+                <p>{item.summary}</p>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  Read the report ↗
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -111,26 +156,27 @@ export default async function Home() {
       <section className="section alt">
         <div className="container">
           <h2>Why patients look to China</h2>
+          {/* 数字会变动，上线前请核实并保持更新（来源：ACS / 近期报道）。 */}
           <div className="cards">
             <div className="step">
-              <h3>A deep CAR-T pipeline</h3>
+              <h3>A fraction of the cost</h3>
               <p>
-                China runs one of the world's largest cell-therapy programs. Some constructs first tested there later
-                won FDA approval — a sign of how mature the science has become.
+                In the US, a single CAR-T infusion can run $300,000–$475,000. In China it is often around $150,000 —
+                and new therapies are pushing prices lower still.
               </p>
             </div>
             <div className="step">
-              <h3>Access when options run low</h3>
+              <h3>A field that's proven itself</h3>
               <p>
-                Trials can be a path for patients who've exhausted approved therapies at home, or who face long waits
-                and very high costs.
+                China approved the world's first solid-tumour CAR-T in 2025, and therapies first developed there have
+                gone on to win FDA approval — a sign of how far the science has come.
               </p>
             </div>
             <div className="step">
-              <h3>Proton therapy, expanding fast</h3>
+              <h3>When you've been told to wait</h3>
               <p>
-                A growing number of Chinese centers offer proton therapy, often at a fraction of US pricing, for
-                tumors where precision matters most.
+                For patients who've exhausted approved options, or face long waits at home, a trial can open a door
+                in weeks rather than months.
               </p>
             </div>
           </div>
@@ -143,8 +189,8 @@ export default async function Home() {
           <div>
             <h2>Get a free eligibility review</h2>
             <p className="section-intro">
-              Tell us a little about the diagnosis and we'll come back within 24 hours with the trials worth exploring
-              — or an honest "not yet." There's no cost and no obligation, and you can stop at any point.
+              Tell us a little about the diagnosis and we'll come back within 24 hours with the trials worth
+              exploring — or an honest "not yet." No cost, no obligation, and you can stop at any point.
             </p>
             <p className="form-note">
               Prefer to just ask questions first? Open the chat with Nora in the bottom corner.
