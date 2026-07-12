@@ -13,8 +13,8 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://trialbridge.vercel.app
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "TrialBridge — CAR-T & Proton Therapy Clinical Trials in China",
-    template: "%s | TrialBridge",
+    default: "CancerTrialMatch — CAR-T & Proton Therapy Clinical Trials in China",
+    template: "%s | CancerTrialMatch",
   },
   description:
     "Explore actively recruiting CAR-T cell therapy and proton therapy clinical trials in China. Free eligibility guidance for patients and families in the US and Europe.",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Browse recruiting trials pulled live from ClinicalTrials.gov. Free eligibility guidance for international patients.",
     type: "website",
     url: SITE,
-    siteName: "TrialBridge",
+    siteName: "CancerTrialMatch",
   },
   robots: { index: true, follow: true },
 };
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="container">
             <Link href="/" className="brand">
-              TrialBridge <span className="cn">临床桥</span>
+              CancerTrialMatch <span className="cn">临床桥</span>
             </Link>
             <nav className="nav">
               <Link href="/car-t-cell-therapy-china">CAR-T</Link>
@@ -66,11 +66,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/privacy">Privacy</Link>
             </div>
             <p className="disclaimer">
-              TrialBridge is an information and patient-navigation service. We are not a hospital and do not
+              CancerTrialMatch is an information and patient-navigation service. We are not a hospital and do not
               provide medical care or advice. Trial data is sourced from the public ClinicalTrials.gov registry
               and may not be complete or current. Participation in any clinical trial is decided solely by the
               trial site. Always consult your treating physician before making treatment decisions.
-              © {new Date().getFullYear()} TrialBridge.
+              © {new Date().getFullYear()} CancerTrialMatch.
             </p>
           </div>
         </footer>

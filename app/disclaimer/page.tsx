@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Medical Disclaimer",
-  description: "How to read the trial information on TrialBridge, and the limits of our service.",
+  description: "How to read the trial information on CancerTrialMatch, and the limits of our service.",
 };
 
 export default function Disclaimer() {
@@ -11,7 +11,7 @@ export default function Disclaimer() {
       <div className="container prose">
         <h1>Medical disclaimer</h1>
         <p>
-          TrialBridge is an information and patient-navigation service. We are not a hospital, clinic, or medical
+          CancerTrialMatch is an information and patient-navigation service. We are not a hospital, clinic, or medical
           provider, and nothing on this site is medical advice, diagnosis, or treatment.
         </p>
         <h2>About the trial data</h2>

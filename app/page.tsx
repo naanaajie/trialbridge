@@ -123,7 +123,7 @@ export default async function Home() {
       {/* HOW IT WORKS */}
       <section className="section" id="how">
         <div className="container">
-          <h2>How TrialBridge works</h2>
+          <h2>How CancerTrialMatch works</h2>
           <p className="section-intro">
             You stay in control the whole way. Nothing is booked, and no records are shared, without your say-so.
           </p>

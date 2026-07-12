@@ -22,7 +22,7 @@ export async function sendLeadEmail(lead: LeadPayload): Promise<boolean> {
   }
 
   const html = `
-    <h2>🔔 New lead from TrialBridge</h2>
+    <h2>🔔 New lead from CancerTrialMatch</h2>
     <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
       <tr><td><b>Source</b></td><td>${esc(lead.source)}</td></tr>
       ${lead.name ? `<tr><td><b>Name</b></td><td>${esc(lead.name)}</td></tr>` : ""}
@@ -41,7 +41,7 @@ export async function sendLeadEmail(lead: LeadPayload): Promise<boolean> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `TrialBridge Leads <${from}>`,
+        from: `CancerTrialMatch Leads <${from}>`,
         to: [to],
         subject: `New lead (${lead.source})${lead.contact ? " — " + lead.contact : ""}`,
         html,

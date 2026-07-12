@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "What TrialBridge does with the information you share.",
+  description: "What CancerTrialMatch does with the information you share.",
 };
 
 export default function Privacy() {
