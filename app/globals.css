@@ -261,3 +261,78 @@ h2 {
 .prose { max-width: 72ch; }
 .prose h2 { font-size: 22px; margin-top: 36px; }
 .prose p, .prose li { color: var(--ink-soft); font-size: 15.5px; }
+
+/* ---------- article / guide pages ---------- */
+.breadcrumb { font-size: 13px; color: var(--ink-soft); margin-bottom: 18px; }
+.breadcrumb a { color: var(--ink-soft); }
+.breadcrumb a:hover { color: var(--pine); }
+.breadcrumb span { margin: 0 8px; color: var(--line); }
+
+.article-hero { padding: 48px 0 8px; }
+.article-lede { font-size: 19px; color: var(--ink-soft); max-width: 62ch; margin: 14px 0 0; }
+
+.article-body { padding: 32px 0 8px; }
+.article-body .prose h2 { font-family: var(--font-display); font-weight: 560; font-size: 26px; margin: 40px 0 12px; letter-spacing: -0.01em; color: var(--ink); }
+.article-body .prose h3 { font-size: 19px; margin: 28px 0 8px; color: var(--ink); }
+.article-body .prose p { margin: 0 0 16px; }
+.article-body .prose ul { margin: 0 0 16px; padding-left: 22px; }
+.article-body .prose li { margin: 0 0 8px; }
+.article-body .prose strong { color: var(--ink); font-weight: 600; }
+.article-body .prose blockquote {
+  margin: 22px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--pine);
+  color: var(--ink-soft); font-style: italic;
+}
+.callout {
+  background: var(--pine-tint); border: 1px solid var(--line); border-left: 3px solid var(--pine);
+  border-radius: 10px; padding: 16px 20px; margin: 24px 0;
+}
+.callout p { margin: 0 !important; color: var(--ink-soft); font-size: 15px; }
+.callout strong { color: var(--pine-deep); }
+
+/* FAQ */
+.faq { margin: 8px 0 0; }
+.faq details {
+  border-bottom: 1px solid var(--line); padding: 16px 0;
+}
+.faq summary {
+  font-family: var(--font-body); font-weight: 600; font-size: 16.5px; cursor: pointer;
+  list-style: none; color: var(--ink); display: flex; justify-content: space-between; gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--pine); font-weight: 400; font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 12px 0 0; color: var(--ink-soft); font-size: 15.5px; }
+
+/* related */
+.related { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
+.related a {
+  display: block; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px; color: var(--ink);
+}
+.related a:hover { border-color: var(--pine); text-decoration: none; box-shadow: 0 8px 20px -16px rgba(14,94,82,0.5); }
+.related a .r-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pine); }
+.related a .r-t { display: block; margin-top: 6px; font-weight: 600; font-size: 15.5px; line-height: 1.4; }
+
+/* article CTA */
+.article-cta {
+  background: var(--pine-deep); border-radius: var(--radius); padding: 32px;
+  margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+}
+@media (max-width: 760px) { .article-cta { grid-template-columns: 1fr; padding: 24px; } }
+.article-cta h2 { color: #fff; font-family: var(--font-display); font-weight: 560; font-size: 26px; margin: 0 0 10px; }
+.article-cta p { color: #cfe2dc; font-size: 15.5px; margin: 0; }
+.article-cta .lead-form input, .article-cta .lead-form textarea { background: #fff; border-color: transparent; }
+.article-cta .form-note { color: #9fc4ba; }
+
+/* guides index */
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.guide-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px; display: flex; flex-direction: column; gap: 8px;
+}
+.guide-card:hover { border-color: var(--pine); box-shadow: 0 10px 24px -18px rgba(14,94,82,0.5); }
+.guide-card .g-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pine); }
+.guide-card h3 { margin: 0; font-size: 18px; line-height: 1.35; }
+.guide-card h3 a { color: var(--ink); }
+.guide-card h3 a:hover { color: var(--pine); }
+.guide-card p { margin: 0; font-size: 14px; color: var(--ink-soft); }

@@ -49,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="nav">
               <Link href="/car-t-cell-therapy-china">CAR-T</Link>
               <Link href="/proton-therapy-china">Proton therapy</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/#how">How it works</Link>
               <Link href="/#contact">Talk to us</Link>
             </nav>
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="links">
               <Link href="/car-t-cell-therapy-china">CAR-T trials</Link>
               <Link href="/proton-therapy-china">Proton therapy trials</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/disclaimer">Medical disclaimer</Link>
               <Link href="/privacy">Privacy</Link>
             </div>
